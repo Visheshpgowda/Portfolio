@@ -18,7 +18,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <p className="heading lg:max-w-[60vw]">
-        Consistency, creativity, and continuous growth are the keys to unlocking extraordinary potential. I thrive on challenges, adapt swiftly, and relentlessly pursue excellence.  <span className="text-purple">Let's create something exceptional together</span> 
+        Consistency, creativity, and continuous growth are the keys to unlocking extraordinary potential. I thrive on challenges, adapt swiftly, and relentlessly pursue excellence.  <span className="text-purple">Let&apos;s create something exceptional together</span> 
         </p>
         <p className="text-white-200 md:mt-10 my-5 text-center">
           Reach out to me today!!!!

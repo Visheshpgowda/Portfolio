@@ -57,7 +57,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-          I'm Vishesh, a 4th-semester Information Science and Engineering student at BMS College of Engineering (BMSCE). I'm passionate about tech solutions and have a solid foundation in programming, data structures, and software development. Eager to learn and collaborate for impactful innovations!
+          I&apos;m Vishesh, a 4th-semester Information Science and Engineering student at BMS College of Engineering (BMSCE). I&apos;m passionate about tech solutions and have a solid foundation in programming, data structures, and software development. Eager to learn and collaborate for impactful innovations!
           </p>
 
           <a href="/resume.pdf" download>
