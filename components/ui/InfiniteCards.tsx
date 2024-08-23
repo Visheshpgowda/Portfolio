@@ -14,6 +14,7 @@ export const InfiniteMovingCards = ({
     quote: string;
     name: string;
     title: string;
+    img: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -26,7 +27,9 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation();
   }, []);
+
   const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -43,6 +46,7 @@ export const InfiniteMovingCards = ({
       setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -58,6 +62,7 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -69,65 +74,50 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   return (
     <div
       ref={containerRef}
       className={cn(
-        // max-w-7xl to w-screen
-        "scroller relative z-20 w-screen overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "relative overflow-hidden w-full bg-gray-50 dark:bg-gray-900 shadow-lg rounded-md",
         className
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          // change gap-16
-          " flex min-w-full shrink-0 gap-16 py-4 w-max flex-nowrap",
-          start && "animate-scroll ",
+          "flex min-w-full gap-4 py-4 w-max flex-nowrap animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
           <li
-            //   change md:w-[450px] to md:w-[60vw] , px-8 py-6 to p-16, border-slate-700 to border-slate-800
-            className="w-[90vw] max-w-full relative rounded-2xl border border-b-0
-             flex-shrink-0 border-slate-800 p-5 md:p-16 md:w-[60vw]"
+            key={idx}
+            className="flex-shrink-0 rounded-xl border border-gray-800 bg-gradient-to-r from-gray-900 to-gray-800 p-4 md:p-6 lg:p-8 relative"
             style={{
-              //   background:
-              //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)", //remove this one
-              //   add these two
-              //   you can generate the color from here https://cssgradient.io/
               background: "rgb(4,7,29)",
               backgroundColor:
                 "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
             }}
-            // change to idx cuz we have the same name
-            key={idx}
           >
             <blockquote>
               <div
                 aria-hidden="true"
-                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                className="absolute inset-0 bg-gradient-to-br from-transparent to-gray-900 opacity-20 rounded-xl"
               ></div>
-              {/* change text color, text-lg */}
-              <span className=" relative z-20 text-sm md:text-lg leading-[1.6] text-white font-normal">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                {/* add this div for the profile img */}
-                <div className="me-3">
-                  <img src="/profile.svg" alt="profile" />
+              <p className="relative z-10 text-sm md:text-base lg:text-lg leading-relaxed text-pink-200 font-light">
+                “{item.quote}”
+              </p>
+              <div className="relative z-10 mt-4 flex items-center flex-col md:flex-row">
+                <img
+                  src={item.img}
+                  alt="profile"
+                  className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 rounded-full border-2 border-white mb-4 md:mb-0"
+                />
+                <div className="ml-0 md:ml-4 text-center md:text-left">
+                  <p className="text-lg text-white font-semibold">{item.name}</p>
+                  <p className="text-sm text-gray-400">{item.title}</p>
                 </div>
-                <span className="flex flex-col gap-1">
-                  {/* change text color, font-normal to font-bold, text-xl */}
-                  <span className="text-xl font-bold leading-[1.6] text-white">
-                    {item.name}
-                  </span>
-                  {/* change text color */}
-                  <span className=" text-sm leading-[1.6] text-white-200 font-normal">
-                    {item.title}
-                  </span>
-                </span>
               </div>
             </blockquote>
           </li>
