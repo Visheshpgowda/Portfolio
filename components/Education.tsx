@@ -15,7 +15,7 @@ const Education = () => {
             <br />
             Bengaluru, India
             <br />
-            <span className="text-green-500 font-semibold">GPA: 9.76</span>
+            <span className="text-green-500 font-semibold">GPA: 9.67</span>
             <br />
             Pursuing a comprehensive program that covers key areas including software engineering, machine learning, artificial intelligence, and web development. Actively engaged in hands-on projects and internships that have enhanced practical skills and industry knowledge. Participated in coding competitions, workshops, and seminars to stay abreast of emerging technologies and trends.
           </p>

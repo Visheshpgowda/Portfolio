@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="flex justify-center relative my-20 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-          Vishesh | 4th Sem ISE at BMSCE
+          Vishesh | 5th Sem ISE at BMSCE
           </p>
 
           {/**
@@ -57,7 +57,7 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-          I&apos;m Vishesh, a 4th-semester Information Science and Engineering student at BMS College of Engineering (BMSCE). I&apos;m passionate about tech solutions and have a solid foundation in programming, data structures, and software development. Eager to learn and collaborate for impactful innovations!
+          I&apos;m Vishesh, a 5th-semester Information Science and Engineering student at BMS College of Engineering (BMSCE). I&apos;m passionate about tech solutions and have a solid foundation in programming, data structures, and software development. Eager to learn and collaborate for impactful innovations!
           </p>
 
           <a href="/resume.pdf" download>
