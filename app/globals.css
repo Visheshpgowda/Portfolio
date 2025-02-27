@@ -83,3 +83,14 @@
     @apply font-bold text-4xl md:text-5xl text-center;
   }
 }
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
