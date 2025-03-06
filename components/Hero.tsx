@@ -71,7 +71,7 @@ const Hero = () => {
               <div 
                 className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 transition-all duration-300 ${isHovering ? 'opacity-100 -translate-y-1' : 'opacity-0 translate-y-2'}`}
               >
-                <Badge variant="secondary" className="shadow-md bg-background/90 backdrop-blur-sm">
+                <Badge variant="outline" className="shadow-md bg-background/90 backdrop-blur-sm">
                   Hello there!
                 </Badge>
               </div>
@@ -83,14 +83,18 @@ const Hero = () => {
             
             {/* Intro Badge */}
             <Badge variant="secondary" className="uppercase tracking-widest text-xs">
-              Vishesh | 5th Sem ISE at BMSCE
+             5th Sem ISE at BMSCE
             </Badge>
             
             {/* Main Heading */}
             <div className="px-4">
               <TextGenerateEffect
+                words="Vishesh P Gowda"
+                className="text-center text-[25px] sm:text-[36px] md:text-5xl lg:text-6xl font-bold"
+              />
+              <TextGenerateEffect
                 words="Building a better world through engineering innovation."
-                className="text-center text-[32px] sm:text-[36px] md:text-5xl lg:text-6xl font-bold"
+                className="text-center text-[10px] sm:text-[36px] md:text-1xl lg:text-1xl"
               />
             </div>
             

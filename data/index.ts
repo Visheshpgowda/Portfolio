@@ -190,6 +190,9 @@ export const testimonials = [
       "Certified",
     name: "Certifcate",
     title: "Google Cloud Computing Foundations Certification",
+    issuer:"Google",
+    date: "2023",
+    text:"Google Cloud Computing Foundations Certification is a beginner-level certification that introduces you to the basics of cloud computing and Google Cloud Platform. This certification is designed for individuals who want to learn more about cloud computing and Google Cloud Platform.",
     img:"/google.png"
   },
   {
@@ -197,6 +200,9 @@ export const testimonials = [
       "Certified",
     name: "Certifcate",
     title: "Supervised Machine Learning: Regression and Classification",
+    issuer:"Coursera",
+    text:"This course is part of the Machine Learning Specialization. In this course, you will learn about supervised machine learning, starting with basic concepts and then moving on to more advanced topics. You will learn about regression and classification, two of the most important types of supervised machine learning algorithms.",
+    date: "2023",
     img:"/mlcert1.jpeg"
   },
   {
@@ -204,6 +210,18 @@ export const testimonials = [
       "Certified",
     name: "Certifcate",
     title: "Advanced Learning Algorithms",
+    issuer:"Coursera",
+    text:" This course is part of the Machine Learning Specialization. In this course, you will learn about advanced learning algorithms, starting with basic concepts and then moving on to more advanced topics. You will learn about deep learning, reinforcement learning, and other advanced topics in machine learning.",
+    date: "2023",
+    img:"/ml2.jpeg"
+  },{
+    quote:
+      "Certified",
+    name: "Certifcate",
+    title: "Advanced Learning Algorithms",
+    issuer:"Coursera",
+    text:" This course is part of the Machine Learning Specialization. In this course, you will learn about advanced learning algorithms, starting with basic concepts and then moving on to more advanced topics. You will learn about deep learning, reinforcement learning, and other advanced topics in machine learning.",
+    date: "2023",
     img:"/ml2.jpeg"
   },
   
@@ -333,8 +351,8 @@ export const workExperience = [
   },
   {
     id: 3,
-    title: "Software Engineer Intern| Tejas Technological Co",
-    desc: "Contributing to the Saksham website project that facilitates seamlessmanagement of academic data such as marks, timetables, andmanagement of academic activities and institutional management.",
+    title: "Backend Developer||Crush Holidays Bangalore",
+    desc: "Contributing for the creation of the database models and the API endpoints for the website. and also deployed the website on the server.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
