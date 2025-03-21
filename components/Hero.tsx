@@ -104,7 +104,7 @@ const Hero = () => {
             </p>
             
             {/* CTA Button */}
-            <a href="/resume.pdf" download>
+{/*             <a href="/resume.pdf" download>
               <Button className="group relative overflow-hidden rounded-full px-8 py-2 transition-all duration-300 ease-out hover:bg-primary/90">
                 <span className="relative z-10 flex items-center gap-2">
                   Download My Resume
@@ -112,7 +112,7 @@ const Hero = () => {
                 </span>
                 <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary/60 to-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </Button>
-            </a>
+            </a> */}
           </CardContent>
         </Card>
       </div>
