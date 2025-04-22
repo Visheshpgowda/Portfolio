@@ -71,7 +71,8 @@ const Experience = () => {
           className="mb-16 text-center"
         >
           <h2 className="text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-300">Work Experience</h2>
-          <p className="text-gray-300 max-w-xl mx-auto">A journey through my professional career and the skills I've developed along the way.</p>
+          <p className="text-gray-300 max-w-xl mx-auto">A journey through my professional career and the skills 
+            I&apos;ve developed along the way.</p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-indigo-300 mx-auto mt-4"></div>
         </motion.div>
 
