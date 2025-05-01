@@ -249,10 +249,10 @@ const EducationSection: React.FC = () => {
       institution: "BMS College of Engineering",
       location: "Bengaluru, India",
       period: "2022 - 2026",
-      grade: { label: "GPA", value: "9.67" },
+      grade: { label: "GPA", value: "9.73" },
       description: "Pursuing a comprehensive program that covers key areas including software engineering, machine learning, artificial intelligence, and web development. Actively engaged in hands-on projects and internships that have enhanced practical skills and industry knowledge.",
       courses: ["Data Structures", "Algorithms", "Database Management", "Web Technologies", "Operating Systems"],
-      achievements: ["Dean's List 2023", "Best Project Award"],
+      achievements: ["Internship at Fidelity Investments", "Hackathon Winner"],
       skills: ["Java", "Python", "JavaScript", "React", "Node.js"]
     },
     {

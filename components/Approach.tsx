@@ -13,10 +13,11 @@ const Approach = () => {
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">
         {/* add des prop */}
         <Card
-          title="Research and Planning Phase:"
-          icon={<AceternityIcon order="Phase 1" />}
-          des="The first phase revolves around extensive research and planning, where I delve deep into understanding the project requirements, defining clear objectives, and meticulously planning out the necessary steps, resources, and timelines. This phase sets the foundation for the entire project, ensuring that I have a well-defined roadmap to follow"
-        >
+  title="Phase 1: Project Initialization"
+  icon={<AceternityIcon order="Phase 1" />}
+  des="The journey begins with a fresh `git init` — setting up the project repo, defining the structure, and setting clear objectives for every module. Just as I initialize a repository, I spend time researching the problem space, scoping out requirements, and planning features in precise detail. This phase is about defining the roadmap: what tech stacks to use, dependencies to install, and timelines for each milestone. Like initializing branches in Git, this stage sets up everything needed for smooth collaboration and deployment later on."
+>
+
           <CanvasRevealEffect
             animationSpeed={5.1}
             // add these classed for the border rounded overflowing -> rounded-3xl overflow-hidden
@@ -24,10 +25,11 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title="Execution and Creation Phase:"
-          icon={<AceternityIcon order="Phase 2" />}
-          des="Moving on to the execution and creation phase, I implement the plans laid out in the previous phase. This involves starting the project implementation, generating initial drafts, sketches, or prototypes to visualize ideas, and then proceeding to develop content, design elements, or code as required. Throughout this phase, I remain focused on aligning my work with the project's goals and requirements, ensuring that every aspect contributes meaningfully to the final outcome."
-        >
+  title="Phase 2: Build & Deploy"
+  icon={<AceternityIcon order="Phase 2" />}
+  des="Next, I build the prototype like executing a `docker build` — laying out the first lines of code, designing components, and establishing the main structure. Here, I focus on iterative development — each commit like a container being optimized, tested, and pushed for deployment. This phase is about bringing ideas to life and deploying them on staging environments. Whether it’s front-end or back-end, I treat each line of code like a commit to a project, ensuring each piece fits cohesively into the larger picture. Think of it as an MVP going live, even if it's just a local environment with real-time feedback loops."
+>
+
           <CanvasRevealEffect
             animationSpeed={3}
             // change bg-black to bg-pink-900
@@ -44,10 +46,12 @@ const Approach = () => {
           {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
-          title="Review and Refinement Phase:"
-          icon={<AceternityIcon order="Phase 3" />}
-          des="The final phase of my work process centers on review and refinement. Here, I meticulously review and evaluate the work I've done, paying close attention to accuracy, completeness, and overall quality. Seeking feedback from peers, mentors, or stakeholders becomes crucial at this stage, as it provides valuable insights and perspectives that help me identify areas for improvement. Incorporating this feedback, I make necessary revisions and refinements, aiming to enhance the overall quality and effectiveness of the project before its final submission or presentation"
-        >
+  title="Phase 3: QA & Merge"
+  icon={<AceternityIcon order="Phase 3" />}
+  des="Before pushing to production, I focus on QA — running tests like a `git pull` to ensure everything is up-to-date and error-free. This phase is about perfecting the product, much like code refactoring and squashing bugs. Code reviews act as merge requests where feedback from peers acts as a final gatekeeper, ensuring the final output is robust. Once everything checks out, I execute the final `git merge` into main, getting ready to push the project live with confidence. In this phase, I ensure quality by conducting manual tests and receiving feedback from peers, akin to staging environments getting the final review before deployment."
+>
+
+
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-sky-600 rounded-3xl overflow-hidden"

@@ -1,4 +1,5 @@
 import { FaLocationArrow } from "react-icons/fa6";
+import { FaTerminal } from "react-icons/fa"; // Added terminal icon
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -6,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { useState, useEffect } from "react";
+import Link from "next/link"; // Import Link from Next.js
 
 const Hero = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -59,13 +61,15 @@ const Hero = () => {
               <div className={`w-32 h-32 overflow-hidden transition-all duration-500 ease-out cursor-pointer
                 ${isHovering ? 'rounded-full scale-110 shadow-lg shadow-primary/20' : 'rounded-lg scale-100'}
               `}>
-                <Avatar 
-                  className="w-full h-full border-4 border-primary/20 relative z-10 
-                    transition-all duration-500 ease-out hover:border-primary/60"
-                >
-                  <AvatarImage src="/ava.webp" alt="Vishesh" className="object-cover" />
-                  <AvatarFallback className="text-3xl">VS</AvatarFallback>
-                </Avatar>
+                <Link href="/terminal">
+                  <Avatar 
+                    className="w-full h-full border-4 border-primary/20 relative z-10 
+                      transition-all duration-500 ease-out hover:border-primary/60"
+                  >
+                    <AvatarImage src="/ava.webp" alt="Vishesh" className="object-cover" />
+                    <AvatarFallback className="text-3xl">VS</AvatarFallback>
+                  </Avatar>
+                </Link>
               </div>
               
               <div 
@@ -83,7 +87,7 @@ const Hero = () => {
             
             {/* Intro Badge */}
             <Badge variant="secondary" className="uppercase tracking-widest text-xs">
-             5th Sem ISE at BMSCE
+             Final Year ISE@BMSCE
             </Badge>
             
             {/* Main Heading */}
@@ -99,20 +103,30 @@ const Hero = () => {
             </div>
             
             {/* Bio */}
-            <p className="text-center text-muted-foreground tracking-wide text-sm sm:text-base md:text-lg lg:text-xl max-w-[80%]">
-              I&apos;m Vishesh, a 5th-semester Information Science and Engineering student at BMS College of Engineering (BMSCE). I&apos;m passionate about tech solutions and have a solid foundation in programming, data structures, and software development. Eager to learn and collaborate for impactful innovations!
-            </p>
+           <p className="text-center text-muted-foreground tracking-wide text-sm sm:text-base md:text-lg lg:text-xl max-w-[80%]">
+  console.log(&quotHey there 👋, Vishesh here!&quot );<br />
+  let status = &quot Engineering student @ BMSCE 🏫&quot ;<br />
+  const passion = [&quot backend dev&quot , &quot clean code&quot , &quot system design&quot , &quot scalable apps&quot ];<br />
+  function build(idea) &#123; return idea + &quot  → deployed 🚀&quot ; &#125;<br />
+  while (learning) &#123;<br />
+  &nbsp;&nbsp;code();<br />
+  &nbsp;&nbsp;debug();<br />
+  &nbsp;&nbsp;optimize();<br />
+  &#125;<br />
+  console.log(&quot Ready to collaborate and craft impactful tech ✨&quot );
+</p>
+
             
-            {/* CTA Button */}
-{/*             <a href="/resume.pdf" download>
+            {/* Terminal Button */}
+            <Link href="/terminal">
               <Button className="group relative overflow-hidden rounded-full px-8 py-2 transition-all duration-300 ease-out hover:bg-primary/90">
                 <span className="relative z-10 flex items-center gap-2">
-                  Download My Resume
-                  <FaLocationArrow className="transition-transform group-hover:translate-x-1" />
+                  Learn More About Me
+                  <FaTerminal className="transition-transform group-hover:translate-x-1" />
                 </span>
                 <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary/60 to-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </Button>
-            </a> */}
+            </Link>
           </CardContent>
         </Card>
       </div>

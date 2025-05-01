@@ -1,36 +1,54 @@
+
+
 "use client";
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaCalendarAlt, FaTools } from "react-icons/fa";
 import { projects } from "@/data";
+// Example data for projects
 
-// Project interface
-interface Project {
-  id: number;
-  category: string;
-  title: string;
-  des: string;
-  img: string;
-  iconLists: string[];
-  timeline: string;
-  link: string;
-}
 
-// Component props interfaces
-interface ProjectModalProps {
-  project: Project | null;
+// MobileCategorySelector component
+const MobileCategorySelector = ({
+  categories,
+  activeCategory,
+  onChange,
+}: {
+  categories: string[];
+  activeCategory: string;
+  onChange: (category: string) => void;
+}) => {
+  return (
+    <div className="relative mb-6">
+      <select
+        value={activeCategory}
+        onChange={(e) => {
+          const selected = e.target.value;
+          if (selected !== activeCategory) onChange(selected);
+        }}
+        className="block w-full px-4 py-2 bg-gray-900 text-white border border-gray-700 rounded-md"
+      >
+        {categories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
+// Project Modal component
+const ProjectModal = ({
+  project,
+  isOpen,
+  onClose,
+}: {
+  project: any;
   isOpen: boolean;
   onClose: () => void;
-}
-
-interface ProjectCardProps {
-  project: Project;
-  onClick: (project: Project) => void;
-}
-
-// Modal component for project details
-const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
+}) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -87,7 +105,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               </svg>
             </button>
           </div>
-          
+
           <div className="p-6">
             <div className="flex items-center gap-2 mb-2">
               <span className="px-3 py-1 text-xs font-medium rounded-full bg-purple-900 text-purple-200">
@@ -98,11 +116,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                 {project.timeline}
               </span>
             </div>
-            
+
             <h2 className="text-2xl font-bold text-white mb-4">{project.title}</h2>
-            
+
             <p className="text-gray-300 mb-6 leading-relaxed">{project.des}</p>
-            
+
             <div className="mb-6">
               <h3 className="text-sm uppercase tracking-wider text-gray-400 mb-3 flex items-center gap-2">
                 <FaTools />
@@ -117,7 +135,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                 ))}
               </div>
             </div>
-            
+
             {project.link && (
               <div className="flex flex-wrap gap-4 mt-6">
                 <a
@@ -129,13 +147,13 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                   <FaGithub />
                   View Repository
                 </a>
-                <a
+                {/* <a
                   href="#"
                   className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors"
                 >
                   <FaExternalLinkAlt />
                   Live Demo
-                </a>
+                </a> */}
               </div>
             )}
           </div>
@@ -145,8 +163,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
   );
 };
 
-// Project card component with integrated timeline
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+// Project Card component
+const ProjectCard = ({
+  project,
+  onClick,
+}: {
+  project: any;
+  onClick: (project: any) => void;
+}) => {
   return (
     <motion.div
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
@@ -165,7 +189,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
             <span className="px-2 py-1 text-xs font-medium rounded-full bg-purple-900 text-purple-200">
               {project.category}
             </span>
-            {/* Timeline badge */}
             <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-800 text-gray-200 flex items-center">
               <FaCalendarAlt className="mr-1 text-purple-400" size={12} />
               {project.timeline}
@@ -173,20 +196,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
           </div>
         </div>
       </div>
-      
+
       <div className="p-5 flex-grow flex flex-col">
         <h3 className="font-bold text-xl text-white mb-2 line-clamp-1">{project.title}</h3>
-        
+
         <p className="text-gray-400 mb-4 line-clamp-2">{project.des}</p>
-        
-        {/* Timeline indicator */}
+
         <div className="my-3 h-1 w-full bg-gray-800 rounded-full overflow-hidden">
-          <div 
+          <div
             className="h-1 bg-gradient-to-r from-purple-500 to-purple-800 rounded-full"
-            style={{ width: "70%" }}  // This could be dynamic based on project completion or timeline
+            style={{ width: "70%" }} // This could be dynamic based on project completion or timeline
           />
         </div>
-        
+
         <div className="mt-auto">
           <div className="flex items-center justify-between mt-4">
             <div className="flex -space-x-2">
@@ -204,7 +226,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
                 </div>
               )}
             </div>
-            
+
             <div className="flex items-center">
               <button className="text-purple-400 hover:text-purple-300 text-sm font-medium">
                 View Details →
@@ -217,82 +239,39 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   );
 };
 
-// Mobile dropdown category selector
-const MobileCategorySelector: React.FC<{
-  categories: string[];
-  activeCategory: string;
-  onChange: (category: string) => void;
-}> = ({ categories, activeCategory, onChange }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  
-  return (
-    <div className="relative w-full mb-6">
-      <button 
-        className="flex items-center justify-between w-full p-3 text-white bg-gray-800 border border-gray-700 rounded-lg"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span>{activeCategory || "Select Category"}</span>
-        <svg 
-          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'transform rotate-180' : ''}`} 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      
-      {isOpen && (
-        <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-lg">
-          {categories.map((category: string) => (
-            <button
-              key={category}
-              className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-700 transition-colors ${
-                activeCategory === category ? 'text-purple-400 font-medium' : 'text-gray-300'
-              }`}
-              onClick={() => {
-                onChange(category);
-                setIsOpen(false);
-              }}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+// Main Projects component
+const Projects = () => {
+  const categories = ["All", ...Array.from(new Set(projects.map((project) => project.category)))];
 
-const PortfolioProjects: React.FC = () => {
-  // Get unique categories from projects
-  const categories = ["All", ...Array.from(new Set(projects.map((project: Project) => project.category)))];
-  
-  const [activeCategory, setActiveCategory] = useState<string>("All");
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Check if on mobile device
   useEffect(() => {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
     checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
-    
+    window.addEventListener("resize", checkIfMobile);
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener("resize", checkIfMobile);
     };
   }, []);
 
-  // Filter projects based on active category
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter((project: Project) => project.category === activeCategory);
+  
 
-  const handleProjectClick = (project: Project) => {
+const filteredProjects =
+  activeCategory === "All"
+    ? projects
+    : projects.filter(
+        (project) =>
+          project.category.trim().toLowerCase() === activeCategory.trim().toLowerCase()
+      );
+
+  
+
+  const handleProjectClick = (project: any) => {
     setSelectedProject(project);
     setModalOpen(true);
   };
@@ -302,93 +281,49 @@ const PortfolioProjects: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            My <span className="text-purple-500">Portfolio</span>
+            My <span className="text-purple-500">Projects</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Showcasing my skills and experience through carefully crafted projects that demonstrate my technical expertise and problem-solving abilities.
-          </p>
+          <p className="text-gray-400">A collection of my recent works</p>
         </div>
 
-        {/* Category Filters - Desktop */}
-        <div className="hidden md:block mb-12 overflow-x-auto scrollbar-hide">
-          <div className="flex justify-center">
-            <div className="inline-flex bg-gray-900 rounded-full p-1">
-              {categories.map((category: string) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all ${
-                    activeCategory === category
-                      ? "bg-purple-700 text-white"
-                      : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Category Selector - Mobile */}
-        <div className="md:hidden mb-8">
-          <MobileCategorySelector 
-            categories={categories}
-            activeCategory={activeCategory}
-            onChange={setActiveCategory}
-          />
-        </div>
-
-        {/* Timeline Header - Shows when projects exist */}
-        {filteredProjects.length > 0 && (
-          <div className="mb-8 bg-gray-900 rounded-lg p-4 border-l-4 border-purple-500">
-            <h3 className="text-lg font-semibold text-white mb-1">Development Timeline</h3>
-            <p className="text-gray-400 text-sm">
-              Projects are displayed with their development timelines to showcase my journey and growth as a developer.
-            </p>
-          </div>
-        )}
-
-        {/* Projects Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <AnimatePresence>
-            {filteredProjects.map((project: Project) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                layout
+        {/* Category Selector */}
+        {isMobile ? (
+          <MobileCategorySelector categories={categories} activeCategory={activeCategory} onChange={setActiveCategory} />
+        ) : (
+          <div className="flex flex-wrap justify-center gap-6 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-3 text-sm font-medium rounded-full ${
+                  activeCategory === category ? "bg-purple-500 text-white" : "bg-gray-800 text-gray-300"
+                } transition-colors`}
               >
-                <ProjectCard project={project} onClick={handleProjectClick} />
-              </motion.div>
+                {category}
+              </button>
             ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {/* Empty State */}
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-16 bg-gray-900 rounded-lg border border-gray-800">
-            <svg className="mx-auto h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-            </svg>
-            <h3 className="mt-4 text-lg font-medium text-gray-400">No projects in this category yet</h3>
-            <p className="mt-2 text-sm text-gray-500">Try selecting a different category from the menu above.</p>
           </div>
         )}
+
+        {/* Project Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => {
+     // Log here safely
+    return (
+      <ProjectCard
+        key={project.id}
+        project={project}
+        onClick={handleProjectClick}
+      />
+    );
+  })}
+        </div>
       </div>
 
       {/* Project Modal */}
-      <ProjectModal
-        project={selectedProject}
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-      />
+      <ProjectModal project={selectedProject} isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };
 
-export default PortfolioProjects;
+export default Projects;
