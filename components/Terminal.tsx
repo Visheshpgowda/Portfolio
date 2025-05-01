@@ -143,6 +143,7 @@ Tech enthusiast with hands-on experience in 10+ projects, demonstrating strong p
         <li>Git, GitHub</li>
       </ul>
     </div>
+    
     <div>
       <span class="text-cyan-400 font-bold">Database:</span>
       <ul class="list-disc ml-5 text-gray-300">
