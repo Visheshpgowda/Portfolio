@@ -60,32 +60,22 @@ const commands: Record<string, CommandAction> = {
     return `
 <div class="p-2 flex">
   <pre class="text-blue-400 mr-4">
-                                  _____
-                                 |     |
-                                 | | | |
-                                 |_____|
-                           ____ ___|_|___ ____
-                          ()___)         ()___)
-                          // /|           |\ \\
-                         // / |           | \ \\
-                        (___) |___________| (___)
-                        (___)   (_______)   (___)
-                        (___)     (___)     (___)
-                        (___)      |_|      (___)
-                        (___)  ___/___\___   | |
-                         | |  |           |  | |
-                         | |  |___________| /___\
-                        /___\  |||     ||| //   \\
-                       //   \\ |||     ||| \\   //
-                       \\   // |||     |||  \\ //
-                        \\ // ()__)   (__()
-                              ///       \\\
-                             ///         \\\
-                           _///___     ___\\\_
-                          |_______|   |_______|
- 
+               _____
+              |     |
+              | | | |
+              |_____|
+        ____ ___|_|___ ____
+      ()___)         ()___)
+      // /|           |\ \\
+      // / |           | \ \\
+    (___) |___________| (___)
+    (___)   (_______)   (___)
+    (___)     (___)     (___)
+    (___)      |_|      (___)
+                        
+
   </pre>
-  <div class="ml-2">
+  <div class="ml-2 mb-10">
     <span class="text-green-400 font-bold">User:</span> vishesh
     <br><span class="text-green-400 font-bold">OS:</span> Arch Linux
     <br><span class="text-green-400 font-bold">Hostname:</span> visheshpgowda.in
@@ -143,7 +133,7 @@ Tech enthusiast with hands-on experience in 10+ projects, demonstrating strong p
         <li>Git, GitHub</li>
       </ul>
     </div>
-    
+
     <div>
       <span class="text-cyan-400 font-bold">Database:</span>
       <ul class="list-disc ml-5 text-gray-300">
