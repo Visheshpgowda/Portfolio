@@ -27,10 +27,10 @@ const MobileCategorySelector = ({
           const selected = e.target.value;
           if (selected !== activeCategory) onChange(selected);
         }}
-        className="block w-full px-4 py-2 bg-gray-900 text-white border border-gray-700 rounded-md"
+        className="block w-full px-4 py-2 bg-gray-900 text-white border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-600 transition duration-200 "
       >
         {categories.map((category) => (
-          <option key={category} value={category}>
+          <option key={category} value={category} className="hover:bg-pink-800 text-white">
             {category}
           </option>
         ))}
@@ -296,7 +296,7 @@ const filteredProjects =
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-3 text-sm font-medium rounded-full ${
-                  activeCategory === category ? "bg-purple-500 text-white" : "bg-gray-800 text-gray-300"
+                  activeCategory === category ? "bg-pink-800 text-white" : "bg-gray-800 text-gray-300"
                 } transition-colors`}
               >
                 {category}

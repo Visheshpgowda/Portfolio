@@ -103,19 +103,7 @@ const Hero = () => {
             </div>
             
             {/* Bio */}
-           <p className="text-center text-muted-foreground tracking-wide text-sm sm:text-base md:text-lg lg:text-xl max-w-[80%]">
-  console.log(&quot;Hey there 👋, Vishesh here!&quot;);<br />
-  let status = &quot;Engineering student @ BMSCE 🏫&quot;;<br />
-  const passion = [&quot;backend dev&quot;, &quot;clean code&quot;, &quot;system design&quot;, &quot;scalable apps&quot;];<br />
-  function build(idea) &#123; return idea + &quot; → deployed 🚀&quot;; &#125;<br />
-  while (learning) &#123;<br />
-  &nbsp;&nbsp;code();<br />
-  &nbsp;&nbsp;debug();<br />
-  &nbsp;&nbsp;optimize();<br />
-  &#125;<br />
-  console.log(&quot;Ready to collaborate and craft impactful tech ✨&quot;);
-</p>
-
+          <p className="text-center text-muted-foreground tracking-wide text-sm sm:text-base md:text-lg lg:text-xl max-w-[80%]"> Hey there 👋, I'm Vishesh!<br /> I'm currently an engineering student at BMSCE 🏫.<br /> I’m passionate about backend development, writing clean code, designing robust systems, and building scalable applications.<br />  I'm constantly learning — whether it’s coding, debugging, or optimizing — and I enjoy every step of the journey.<br /></p>
 
 
             

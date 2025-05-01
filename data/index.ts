@@ -5,7 +5,9 @@ export const navItems = [
   { name: "Skills", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
-
+export const tnavItems = [
+  {name:'Back',link:'/'},
+]
 export const gridItems = [
   {
     id: 1,
@@ -19,7 +21,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: " flexible to work with any time zone communications",
+    title: " Flexible to Work with any Time Zone Communications",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",

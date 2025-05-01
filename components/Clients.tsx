@@ -104,7 +104,15 @@ const Clients: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"techstack" | "certifications">("techstack");
   const [animateCards, setAnimateCards] = useState<boolean>(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
-  
+  const handleTabSwitch = (tab: "techstack" | "certifications") => {
+  if (tab === activeTab) return; // Do nothing if already active
+  setActiveTab(tab);
+  setAnimateCards(false);
+  setTimeout(() => {
+    setAnimateCards(true);
+  }, 50);
+};
+
   // Only featured certificates
   const featuredCertificates = testimonials.slice(0, 6);
 
@@ -191,35 +199,28 @@ const Clients: React.FC = () => {
           transition={{ delay: 0.2, duration: 0.5 }}
         >
           <button
-            onClick={() => {
-              setAnimateCards(false);
-              setTimeout(() => {
-                setActiveTab("techstack");
-              }, 300);
-            }}
-            className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
-              activeTab === "techstack"
-                ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
-                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-            }`}
-          >
-            Technology Stack
-          </button>
-          <button
-            onClick={() => {
-              setAnimateCards(false);
-              setTimeout(() => {
-                setActiveTab("certifications");
-              }, 300);
-            }}
-            className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
-              activeTab === "certifications"
-                ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
-                : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-            }`}
-          >
-            Certifications
-          </button>
+  onClick={() => handleTabSwitch("techstack")}
+  className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
+    activeTab === "techstack"
+      ? "bg-pink-800 text-white shadow-lg shadow-purple-500/30"
+      : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+  }`}
+>
+  Technology Stack
+</button>
+
+<button
+  onClick={() => handleTabSwitch("certifications")}
+  className={`px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
+    activeTab === "certifications"
+      ? "bg-pink-800 text-white shadow-lg shadow-purple-500/30"
+      : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+  }`}
+>
+  Certifications
+</button>
+
+
         </motion.div>
       </div>
 
