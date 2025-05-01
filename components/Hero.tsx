@@ -103,7 +103,7 @@ const Hero = () => {
             </div>
             
             {/* Bio */}
-          <p className="text-center text-muted-foreground tracking-wide text-sm sm:text-base md:text-lg lg:text-xl max-w-[80%]"> Hey there 👋, I'm Vishesh!<br /> I'm currently an engineering student at BMSCE 🏫.<br /> I’m passionate about backend development, writing clean code, designing robust systems, and building scalable applications.<br />  I'm constantly learning — whether it’s coding, debugging, or optimizing — and I enjoy every step of the journey.<br /></p>
+          <p className="text-center text-muted-foreground tracking-wide text-sm sm:text-base md:text-lg lg:text-xl max-w-[80%]"> Hey there 👋, I&apos;m Vishesh!<br /> I&apos;m currently an engineering student at BMSCE 🏫.<br /> I&apos;m passionate about backend development, writing clean code, designing robust systems, and building scalable applications.<br />  I'm constantly learning — whether it&apos;s coding, debugging, or optimizing — and I enjoy every step of the journey.<br /></p>
 
 
             
