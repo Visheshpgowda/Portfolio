@@ -104,17 +104,19 @@ const Hero = () => {
             
             {/* Bio */}
            <p className="text-center text-muted-foreground tracking-wide text-sm sm:text-base md:text-lg lg:text-xl max-w-[80%]">
-  console.log(&quotHey there 👋, Vishesh here!&quot );<br />
-  let status = &quot Engineering student @ BMSCE 🏫&quot ;<br />
-  const passion = [&quot backend dev&quot , &quot clean code&quot , &quot system design&quot , &quot scalable apps&quot ];<br />
-  function build(idea) &#123; return idea + &quot  → deployed 🚀&quot ; &#125;<br />
+  console.log(&quot;Hey there 👋, Vishesh here!&quot;);<br />
+  let status = &quot;Engineering student @ BMSCE 🏫&quot;;<br />
+  const passion = [&quot;backend dev&quot;, &quot;clean code&quot;, &quot;system design&quot;, &quot;scalable apps&quot;];<br />
+  function build(idea) &#123; return idea + &quot; → deployed 🚀&quot;; &#125;<br />
   while (learning) &#123;<br />
   &nbsp;&nbsp;code();<br />
   &nbsp;&nbsp;debug();<br />
   &nbsp;&nbsp;optimize();<br />
   &#125;<br />
-  console.log(&quot Ready to collaborate and craft impactful tech ✨&quot );
+  console.log(&quot;Ready to collaborate and craft impactful tech ✨&quot;);
 </p>
+
+
 
             
             {/* Terminal Button */}
