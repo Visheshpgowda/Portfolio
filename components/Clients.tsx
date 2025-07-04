@@ -183,7 +183,7 @@ const Clients: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Our <span className="text-purple-400">Expertise</span>
+          My <span className="text-purple-400">Expertise</span>
           <motion.div 
             className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500"
             initial={{ width: 0 }}

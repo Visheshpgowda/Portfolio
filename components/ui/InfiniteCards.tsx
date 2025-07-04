@@ -111,6 +111,7 @@ export const InfiniteMovingCards = ({
               <div className="relative z-10 mt-4 flex items-center flex-col md:flex-row">
                 <img
                   src={item.img}
+                  loading="lazy"
                   alt="profile"
                   className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 rounded-full border-2 border-white mb-4 md:mb-0"
                 />

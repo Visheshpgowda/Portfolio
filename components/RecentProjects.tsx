@@ -92,6 +92,7 @@ const ProjectModal = ({
             <div className="h-48 md:h-64 bg-gradient-to-r from-purple-900 to-blue-900 rounded-t-lg overflow-hidden">
               <img
                 src={project.img}
+                loading="lazy"
                 alt={project.title}
                 className="w-full h-full object-cover opacity-60"
               />

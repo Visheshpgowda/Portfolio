@@ -13,12 +13,12 @@ export const gridItems = [
     id: 1,
     title: "Driven by curiosity, fueled by innovation, and inspired by possibilities.",
     description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] relative", // Ensure the grid cell is positioned relatively
-    imgClassName: "absolute inset-0 w-full h-full object-cover", // Make the image cover the entire grid cell
-    titleClassName: "justify-end",
-    img: "/b1.jpg",
+    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] relative", // Ensures proper size and layout
+    imgClassName: "absolute inset-0 w-full h-full object-cover rounded-3xl", // Ensures full image cover and preserves border-radius
+    titleClassName: "justify-end text-white", // Adds contrast on image
+    img: "/ava.webp",
     spareImg: "",
-  },
+  },  
   {
     id: 2,
     title: " Flexible to Work with any Time Zone Communications",
@@ -247,6 +247,16 @@ export const testimonials = [
     date: "2023",
     img:"/ml2.jpeg"
   },
+  {
+    quote: "Certified",
+    name: "Certificate",
+    title: "UiPath Academy Automation Developer Associate Training",
+    issuer: "UiPath",
+    text: "Completed the UiPath Academy Automation Developer Associate Training, gaining hands-on experience in building RPA solutions using UiPath Studio. Covered key concepts such as selectors, data manipulation, control flow, exception handling, and orchestrator integration.",
+    date: "2025",
+    img: "/RPA.png"
+  }
+  
   
   // {
   //   quote:
@@ -353,53 +363,102 @@ export const companies = [
     name: "Tenserflow",
     img: "/tenser.jpeg",
     nameImg: "/dockerName.svg",
+  },
+  {
+    id: 13,
+    name:"Azure",
+    img: "/azure.jpeg",
+    nameImg: "/dockerName.svg",
+  },{
+    id:14,
+    name:"AWS",
+    img: "/aws.jpeg",
+    nameImg: "/dockerName.svg",
+  },
+  {
+    id:15,
+    name:"GCP",
+    img: "/gcp.jpeg",
+    nameImg: "/dockerName.svg",
+  }
+  ,{
+    id:16,
+    name:"Langchain",
+    img: "/langchain.webp",
+    nameImg: "/dockerName.svg",
+  },
+  {
+    id:17,
+    name:"OracleDB",
+    img: "/oracle.jpeg",
+    nameImg: "/dockerName.svg",
+  },
+  {
+    id:18,
+    name:"Docker",
+    img: "/docker.jpeg",
+    nameImg: "/dockerName.svg",
   }
 ];
 
 export const workExperience = [
-  {
-    id: 1,
-    title: "Software Engineer Intern",
-    company: "Tejas Technological Co",
-    period: "Jan 2023 - Present",
-    desc: "Contributing to the Saksham website project that facilitates seamless management of academic data such as marks, timetables, and management of academic activities and institutional management.",
-    skills: ["Next.js", "Node.js", "Jest"],
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
-    color: "from-blue-500 to-indigo-600",
-    bgColor: "bg-slate-800/70",
-  },
-  {
-    id: 2,
-    title: "Backend Developer",
-    company: "Big Foundation, BMSCE's E-Cell",
-    period: "Jun 2022 - Dec 2022",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity. Implemented backend solutions for data management and user authentication, improving overall system performance.",
-    skills: ["React.js", "Node.js", "MongoDb", "UI/UX"],
-    className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
-    color: "from-violet-500 to-purple-600",
-    bgColor: "bg-slate-800/70",
-  },
-  {
-    id: 3,
-    title: "Backend Developer",
-    company: "Crush Holidays Bangalore",
-    period: "Mar 2022 - May 2022",
-    desc: "Contributing to the creation of database models and API endpoints for the website. Successfully deployed the website on the server, ensuring smooth operation and performance optimization for travel booking functionalities.",
-    skills: ["Node.js", "MongoDB", "REST API", "Deployment"],
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
-    color: "from-sky-500 to-blue-600",
-    bgColor: "bg-slate-800/70",
-  },
+    {
+      id: 0,
+      title: "SDE Intern",
+      company: "Fidelity Investments",
+      period: "May 2025 – July 2025",
+      desc: "Engineered robust ADF pipelines with custom lock mechanisms to prevent race conditions in concurrent clone runs. Improved pipeline reliability and execution integrity, reducing clone conflicts by 80%. Leveraged native ADF activities and Azure Blob Storage to build a fully serverless concurrency control system.",
+      skills: ["Azure Data Factory", "Concurrency Control", "Azure Blob Storage"],
+      className: "md:col-span-2",
+      thumbnail: "/exp4.svg",
+      color: "from-green-500 to-emerald-600",
+      bgColor: "bg-slate-800/70",
+    },
+    {
+      id: 1,
+      title: "Software Engineer Intern",
+      company: "Tejas Technological Co",
+      period: "Jan 2023 - Present",
+      desc: "Contributing to the Saksham website project that facilitates seamless management of academic data such as marks, timetables, and management of academic activities and institutional management.",
+      skills: ["Next.js", "Node.js", "Jest"],
+      className: "md:col-span-2",
+      thumbnail: "/exp4.svg",
+      color: "from-blue-500 to-indigo-600",
+      bgColor: "bg-slate-800/70",
+    },
+    {
+      id: 2,
+      title: "Backend Developer",
+      company: "Big Foundation, BMSCE's E-Cell",
+      period: "Jun 2022 - Dec 2022",
+      desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity. Implemented backend solutions for data management and user authentication, improving overall system performance.",
+      skills: ["React.js", "Node.js", "MongoDb", "UI/UX"],
+      className: "md:col-span-2",
+      thumbnail: "/exp1.svg",
+      color: "from-violet-500 to-purple-600",
+      bgColor: "bg-slate-800/70",
+    },
+    {
+      id: 3,
+      title: "Backend Developer",
+      company: "Crush Holidays Bangalore",
+      period: "Mar 2022 - May 2022",
+      desc: "Contributing to the creation of database models and API endpoints for the website. Successfully deployed the website on the server, ensuring smooth operation and performance optimization for travel booking functionalities.",
+      skills: ["Node.js", "MongoDB", "REST API", "Deployment"],
+      className: "md:col-span-2",
+      thumbnail: "/exp4.svg",
+      color: "from-sky-500 to-blue-600",
+      bgColor: "bg-slate-800/70",
+    },
+  
+  
 ];
 
 export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-    link:"https://github.com/vishesh1525"
+    link:"https://github.com/Visheshpgowda"
   },
   {
     id: 2,
